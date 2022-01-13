@@ -8,11 +8,11 @@ RUN echo    "server {\n\
                 proxy_redirect     off;\n\
                 proxy_set_header X-Ecwid-Ops-Test-Task 20211208;\n\
                 include proxy_params;\n\
-                                }\n\
-                location /build/ {\n\
-                                autoindex on;\n\
-                 root  /opt/box/lib;\n\
                 }\n\
+                location /build/ {\n\
+                autoindex on;\n\
+                root  /opt/box/lib;\n\
+         }\n\
 }" > /etc/nginx/sites-enabled/box.conf
 RUN mkdir /opt/box/lib/build
 ADD https://s3.eu-west-2.amazonaws.com/ecwid.ops/devops/startup /startup

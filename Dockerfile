@@ -18,6 +18,6 @@ RUN mkdir /opt/box/lib/build
 ADD https://s3.eu-west-2.amazonaws.com/ecwid.ops/devops/startup /startup
 ADD https://s3.eu-west-2.amazonaws.com/ecwid.ops/devops/qrcode.js /opt/box/lib/build
 ADD https://s3.eu-west-2.amazonaws.com/ecwid.ops/devops/box /etc/init.d/box
-RUN chmod 777 /etc/init.d/box && chmod 777 /startup
+RUN chmod 777 /etc/init.d/box && chmod 777 /startup && chmod 777 /opt/box/lib/build/qrcode.js
 ENV DEBIAN_FRONTEND=newt
 CMD ["/startup"]
